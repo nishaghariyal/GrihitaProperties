@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const pool = require("../db/db");
-const auth = require("../middleware/authMiddleware");
+const auth = require("../middleware/authmiddleware");
 
 // Buyer viewed a property
 router.post("/", auth, async (req, res) => {
