@@ -87,7 +87,7 @@ function CreateProperty() {
         });
 
         const uploadRes = await fetch(
-          "http://localhost:5000/api/upload",
+          "https://grihitaproperties.onrender.com/api/upload",
           {
             method: "POST",
             body: imageData,

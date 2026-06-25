@@ -54,7 +54,7 @@ function CreateSeller() {
     const token = localStorage.getItem("token");
 
     const res = await fetch(
-      "http://localhost:5000/api/admin/create-seller",
+      "https://grihitaproperties.onrender.com/api/admin/create-seller",
       {
         method:"POST",
         headers:{

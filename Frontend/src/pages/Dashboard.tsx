@@ -32,7 +32,7 @@ function Dashboard() {
         const token = localStorage.getItem("token");
 
         await fetch(
-        `http://localhost:5000/api/properties/${id}`,
+        `https://grihitaproperties.onrender.com/api/properties/${id}`,
         {
             method: "DELETE",
             headers: {

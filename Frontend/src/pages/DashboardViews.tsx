@@ -17,7 +17,7 @@ function DashboardViews() {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        "http://localhost:5000/api/property-views/seller",
+        "https://grihitaproperties.onrender.com/api/property-views/seller",
         {
           headers: {
             Authorization: `Bearer ${token}`,

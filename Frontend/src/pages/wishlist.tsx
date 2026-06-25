@@ -18,7 +18,7 @@ function Wishlist() {
     const token = localStorage.getItem("token");
 
     const res = await axios.get(
-      "http://localhost:5000/api/wishlist",
+      "https://grihitaproperties.onrender.com/api/wishlist",
       {
         headers: {
           Authorization: `Bearer ${token}`

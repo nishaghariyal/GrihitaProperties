@@ -28,7 +28,7 @@ function PropertyCard({ property }: any) {
     try {
 
       const res = await fetch(
-        "http://localhost:5000/api/wishlist",
+        "https://grihitaproperties.onrender.com/api/wishlist",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -66,7 +66,7 @@ function PropertyCard({ property }: any) {
     try {
 
       const res = await fetch(
-        `http://localhost:5000/api/wishlist/${property.id}`,
+        `https://grihitaproperties.onrender.com/api/wishlist/${property.id}`,
         {
           method: "POST",
           headers: {

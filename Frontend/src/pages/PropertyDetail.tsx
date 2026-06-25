@@ -16,7 +16,7 @@ function PropertyDetail() {
       try {
 
         const res = await fetch(
-          `http://localhost:5000/api/properties/${id}`
+          `https://grihitaproperties.onrender.com/api/properties/${id}`
         );
 
         const data = await res.json();
@@ -28,7 +28,7 @@ function PropertyDetail() {
         if (token) {
 
           await fetch(
-            "http://localhost:5000/api/property-views",
+            "https://grihitaproperties.onrender.com/api/property-views",
             {
               method: "POST",
               headers: {
@@ -61,7 +61,7 @@ function PropertyDetail() {
         localStorage.getItem("token");
 
       const res = await fetch(
-        "http://localhost:5000/api/inquiries",
+        "https://grihitaproperties.onrender.com/api/inquiries",
         {
           method: "POST",
 

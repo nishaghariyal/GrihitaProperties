@@ -30,7 +30,7 @@ fetchProperties();
 const fetchProperties = async () => {
 try {
 const res = await axios.get(
-"http://localhost:5000/api/properties"
+"https://grihitaproperties.onrender.com/api/properties"
 );
   console.log(res.data)
   setProperties(res.data);
