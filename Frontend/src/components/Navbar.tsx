@@ -41,9 +41,7 @@ function Navbar() {
                 Grihita
               </h1>
 
-              <p className="text-[10px] uppercase tracking-[0.35em] text-gray-500">
-                Properties
-              </p>
+              
 
             </div>
 
