@@ -13,6 +13,8 @@ import {Link} from "react-router-dom";
 function Home() {
 const [properties, setProperties] = useState<any[]>([]);
 const [search, setSearch] = useState("");
+const [suggestions, setSuggestions] = useState<any[]>([]);
+const [, setLoadingSuggestions] = useState(false);
 const [activeTab, setActiveTab] = useState("Residential");
 const [wishlist, setWishlist] = useState<number[]>(
   JSON.parse(
@@ -37,6 +39,44 @@ const res = await axios.get(
 } catch (error) {
   console.error(error);
 }
+
+};
+
+const fetchSuggestions = async (value: string) => {
+
+  if (value.length < 2) {
+    setSuggestions([]);
+    return;
+  }
+
+  try {
+
+    setLoadingSuggestions(true);
+
+    const res = await axios.get(
+      `https://nominatim.openstreetmap.org/search`,
+      {
+        params: {
+          q: value,
+          countrycodes: "in",
+          format: "json",
+          addressdetails: 1,
+          limit: 6,
+        },
+      }
+    );
+
+    setSuggestions(res.data);
+
+  } catch (err) {
+
+    console.log(err);
+
+  } finally {
+
+    setLoadingSuggestions(false);
+
+  }
 
 };
 
@@ -169,22 +209,53 @@ return (
 
       <div className="bg-white p-5 rounded-b-2xl shadow-2xl max-w-4xl mx-auto flex flex-col md:flex-row gap-4">
 
-        <input
-          type="text"
-          value={search}
-          onChange={(e) =>
-            setSearch(
-              e.target.value
-            )
-          }
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              handleSearch();
-            }
-          }}
-          placeholder="Search City, Locality, Project..."
-          className="flex-1 border p-4 rounded-lg text-black"
-        />
+        <div className="relative flex-1">
+
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => {
+              setSearch(e.target.value);
+              fetchSuggestions(e.target.value);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                handleSearch();
+              }
+            }}
+            placeholder="Search City, Locality, Project..."
+            className="w-full border p-4 rounded-lg text-black"
+          />
+
+          {suggestions.length > 0 && (
+
+            <div className="absolute left-0 right-0 top-full bg-white shadow-lg rounded-lg mt-2 max-h-72 overflow-y-auto z-50">
+
+              {suggestions.map((item: any) => (
+
+                <div
+                  key={item.place_id}
+                  onClick={() => {
+
+                    setSearch(item.display_name);
+
+                    setSuggestions([]);
+
+                  }}
+                  className="p-3 hover:bg-gray-100 cursor-pointer border-b"
+                >
+
+                  📍 {item.display_name}
+
+                </div>
+
+              ))}
+
+            </div>
+
+          )}
+
+        </div>
 
         <button
           onClick={handleSearch}
