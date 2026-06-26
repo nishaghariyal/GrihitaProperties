@@ -473,7 +473,7 @@ return (
 
                 <div className="overflow-hidden">
                   <img
-                    src={property.image_url || "https://media.istockphoto.com/id/2155879454/photo/this-is-an-exterior-photo-of-a-home-for-sale-in-beverly-hills-ca.jpg?s=612x612&w=0&k=20&c=uSKacMQvmaYX5Pf5Br7pUfErYQbNt_UWXRTjfwrdSDQ="}
+                    src={property.image_url || "https://images.unsplash.com/photo-1568605114967-8130f3a36994"}
                     alt={property.title}
                     className="h-64 w-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
