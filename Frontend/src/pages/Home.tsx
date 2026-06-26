@@ -66,6 +66,8 @@ const fetchSuggestions = async (value: string) => {
       }
     );
 
+    console.log(res.data);
+
     setSuggestions(res.data);
 
   } catch (err) {
