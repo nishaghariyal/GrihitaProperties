@@ -19,7 +19,7 @@ function Navbar() {
   const role =
     localStorage.getItem("role");
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
+    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
 
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
@@ -27,14 +27,30 @@ function Navbar() {
           to="/"
           className="flex items-center gap-2"
         >
-          <MdApartment className="text-blue-600 text-4xl" />
+          <div className="flex items-center gap-3">
 
-          <h1 className="text-4xl font-extrabold text-blue-600">
-            Grihita
-          </h1>
+            <div className="w-11 h-11 rounded-full bg-linear-to-br from-amber-400 to-yellow-600 flex items-center justify-center shadow-lg">
+
+              <MdApartment className="text-white text-xl" />
+
+            </div>
+
+            <div>
+
+              <h1 className="text-2xl font-bold text-gray-900 tracking-wide">
+                Grihita
+              </h1>
+
+              <p className="text-[10px] uppercase tracking-[0.35em] text-gray-500">
+                Properties
+              </p>
+
+            </div>
+
+          </div>
         </Link>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-10 text-gray-700 font-medium">
 
           <Link to="/">Home</Link>
 
@@ -59,7 +75,7 @@ function Navbar() {
               )}
               <button
                 onClick={handleLogout}
-                className="border border-blue-600 px-4 py-2 rounded-lg text-blue-600"
+                className="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-full transition"
               >
                 Logout
               </button>
@@ -67,13 +83,16 @@ function Navbar() {
             </>
           ) : (
             <>
-              <Link to="/login">
+              <Link
+                to="/login"
+                className="hover:text-amber-600 transition"
+              >
                 Login
               </Link>
 
               <Link
                 to="/signup"
-                className="border border-blue-600 px-4 py-2 rounded-lg text-blue-600"
+                className="bg-amber-500 hover:bg-amber-600 text-white px-6 py-2 rounded-full transition duration-300 shadow-md"
               >
                 Signup
               </Link>

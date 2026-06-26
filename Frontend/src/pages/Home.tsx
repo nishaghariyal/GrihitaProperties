@@ -139,30 +139,52 @@ return (
 <Navbar />
 
   <section
-  className="relative min-h-screen bg-cover bg-center"
+  className="relative min-h-screen flex items-center bg-cover bg-center"
   style={{
     backgroundImage:
       "url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600')",
   }}
 >
-  <div className="absolute inset-0 bg-black/50"></div>
+  <div className="absolute inset-0 bg-linear-to-r from-black/75 via-black/55 to-black/30"></div>
 
-  <div className="relative z-10 py-32">
+  <div className="relative z-10 w-full py-20 md:py-28">
     <div className="max-w-7xl mx-auto px-6">
 
       <div className="text-center text-white">
 
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          Find Your Dream Property
+        <div className="flex justify-center mb-8">
+
+        <span className="bg-white/15 backdrop-blur-md border border-white/20 text-white px-6 py-2 rounded-full uppercase tracking-[0.3em] text-xs">
+
+        India's Trusted Real Estate
+
+        </span>
+
+        </div>
+
+        <h1 className="max-w-4xl mx-auto text-center text-5xl md:text-7xl font-black leading-tight text-white">
+
+        Find a place
+
+        <span className="block text-amber-400 italic font-serif">
+        you'll love
+        </span>
+
+        coming home to.
+
         </h1>
 
-        <p className="text-base md:text-xl mb-10">
-          Buy, Rent & Sell Properties Across India
+        <p className="max-w-3xl mx-auto mt-8 text-lg md:text-2xl text-gray-200 leading-8">
+
+        Buy, Rent and Sell premium homes,
+        commercial spaces, land and farmhouses
+        across India's most loved cities.
+
         </p>
 
       </div>
 
-      <div className="bg-white rounded-t-2xl max-w-4xl mx-auto flex overflow-x-auto whitespace-nowrap no-scrollbar">
+      <div className="mt-14 bg-white/95 backdrop-blur-xl rounded-t-3xl shadow-2xl border border-white/40">
       <button
         onClick={() => setActiveTab("Residential")}
         className={`px-6 py-4 shrink-0 ... ${
@@ -209,7 +231,7 @@ return (
 
       </div>
 
-      <div className="bg-white p-5 rounded-b-2xl shadow-2xl max-w-4xl mx-auto flex flex-col md:flex-row gap-4">
+      <div className="bg-white/95 backdrop-blur-xl p-6 rounded-b-3xl shadow-2xl border border-white/40">
 
         <div className="relative flex-1">
 
@@ -270,7 +292,7 @@ return (
 
       <div className="grid md:grid-cols-3 gap-6 mt-16">
 
-        <div className="bg-white p-6 rounded-xl shadow-lg text-center">
+        <div className="bg-white/95 backdrop-blur-lg p-6 rounded-2xl shadow-2xl hover:-translate-y-2 hover:shadow-blue-200 transition-all duration-300 text-center">
           <h2 className="text-4xl font-bold text-blue-600">
             {properties.length}
           </h2>
@@ -280,7 +302,7 @@ return (
           </p>
         </div>
 
-        <div className="bg-white p-6 rounded-xl shadow-lg text-center">
+        <div className="bg-white/95 backdrop-blur-lg p-6 rounded-2xl shadow-2xl hover:-translate-y-2 hover:shadow-blue-200 transition-all duration-300 text-center">
           <h2 className="text-4xl font-bold text-blue-600">
             5K+
           </h2>
@@ -290,7 +312,7 @@ return (
           </p>
         </div>
 
-        <div className="bg-white p-6 rounded-xl shadow-lg text-center">
+        <div className="bg-white/95 backdrop-blur-lg p-6 rounded-2xl shadow-2xl hover:-translate-y-2 hover:shadow-blue-200 transition-all duration-300 text-center">
           <h2 className="text-4xl font-bold text-blue-600">
             100+
           </h2>
@@ -304,6 +326,96 @@ return (
 
     </div>
   </div> 
+  </section>
+
+  <section className="bg-white py-20">
+
+    <div className="max-w-7xl mx-auto px-6">
+
+      <h2 className="text-4xl font-bold text-center text-gray-900 mb-4">
+
+        The thoughtful way to find home.
+
+      </h2>
+
+      <p className="text-center text-gray-500 mb-14">
+
+        Why thousands of buyers trust Grihita.
+
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <div className="bg-white rounded-3xl border border-gray-200 p-8 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+
+          <div className="w-14 h-14 rounded-2xl bg-amber-100 flex items-center justify-center text-2xl mb-5">
+
+            🛡️
+
+          </div>
+
+          <h3 className="text-2xl font-bold mb-3">
+
+            Verified Listings
+
+          </h3>
+
+          <p className="text-gray-500 leading-7">
+
+            Every property is verified before being listed so buyers get genuine information.
+
+          </p>
+
+        </div>
+
+        <div className="bg-white rounded-3xl border border-gray-200 p-8 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+
+          <div className="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center text-2xl mb-5">
+
+            💰
+
+          </div>
+
+          <h3 className="text-2xl font-bold mb-3">
+
+            Zero Brokerage
+
+          </h3>
+
+          <p className="text-gray-500 leading-7">
+
+            Connect directly with owners and trusted sellers without hidden charges.
+
+          </p>
+
+        </div>
+
+        <div className="bg-white rounded-3xl border border-gray-200 p-8 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+
+          <div className="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center text-2xl mb-5">
+
+            🏡
+
+          </div>
+
+          <h3 className="text-2xl font-bold mb-3">
+
+            Curated Spaces
+
+          </h3>
+
+          <p className="text-gray-500 leading-7">
+
+            Premium homes, villas, apartments and land selected with quality standards.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </section>
 
   <section
@@ -345,7 +457,7 @@ return (
               <PropertyCard
                 key={property.id}
                 property={property}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition relative"
+                className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 relative border border-gray-100"
               >
 
                 <button
@@ -359,20 +471,19 @@ return (
                   )}
                 </button>
 
-                <img
-                  src={
-                    property.image_url ||
-                    "https://images.unsplash.com/photo-1568605114967-8130f3a36994"
-                  }
-                  alt={property.title}
-                  className="h-60 w-full object-cover"
-                />
+                <div className="overflow-hidden">
+                  <img
+                    src={property.image_url || "https://images.unsplash.com/photo-1568605114967-8130f3a36994"}
+                    alt={property.title}
+                    className="h-64 w-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
 
                 <div className="p-5">
 
                 <div className="flex justify-between items-center mb-3">
 
-                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm">
+                  <span className="bg-linear-to-r from-amber-400 to-orange-500 text-white px-4 py-1 rounded-full text-xs font-semibold tracking-wide">
                     {property.property_type}
                   </span>
 
@@ -387,7 +498,7 @@ return (
                   {property.location}
                 </p>
 
-                <p className="text-blue-600 font-bold text-2xl mt-3">
+                <p className="text-3xl font-extrabold text-emerald-600 mt-4">
                   ₹ {property.price}
                 </p>
 
@@ -397,7 +508,7 @@ return (
 
                 <Link
                   to={`/property/${property.id}`}
-                  className="block mt-4 w-full bg-blue-600 text-white py-2 rounded-lg text-center"
+                  className="block mt-6 w-full bg-gray-900 hover:bg-black text-white py-3 rounded-full text-center transition duration-300"
                 >
                   View Details
                 </Link>
