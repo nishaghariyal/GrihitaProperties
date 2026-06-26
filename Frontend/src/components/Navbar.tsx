@@ -95,20 +95,38 @@ function Navbar() {
 
             <Link to="/">Home</Link>
 
-            <Link to="/dashboard">Dashboard</Link>
+            {token ? (
+              <>
+                {role === "seller" && (
+                  <>
+                    <Link to="/dashboard">Dashboard</Link>
+                    <Link to="/create-property">Post Property</Link>
+                  </>
+                )}
 
-            <Link to="/create-property">Post Property</Link>
+                {user?.role === "buyer" && (
+                  <Link to="/wishlist">Wishlist</Link>
+                )}
 
-            {user?.role === "buyer" && (
-              <Link to="/wishlist">Wishlist</Link>
+                <button
+                  onClick={handleLogout}
+                  className="text-left text-red-600"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <Link to="/login">Login</Link>
+
+                <Link
+                  to="/signup"
+                  className="text-blue-600"
+                >
+                  Signup
+                </Link>
+              </>
             )}
-
-            <button
-              onClick={handleLogout}
-              className="text-left text-red-600"
-            >
-              Logout
-            </button>
 
           </div>
         )}
