@@ -10,6 +10,8 @@ import {
 
 import {Link} from "react-router-dom";
 
+import hero from "../assets/hero.jpg";
+
 function Home() {
 const [properties, setProperties] = useState<any[]>([]);
 const [search, setSearch] = useState("");
@@ -141,8 +143,7 @@ return (
   <section
   className="relative min-h-screen flex items-center bg-cover bg-center"
   style={{
-    backgroundImage:
-      "url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600')",
+    backgroundImage: `url(${hero})`,
   }}
 >
   <div className="absolute inset-0 bg-linear-to-r from-black/75 via-black/55 to-black/30"></div>
