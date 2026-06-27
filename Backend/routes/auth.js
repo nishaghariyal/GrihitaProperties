@@ -94,7 +94,7 @@ router.post("/login", async (req, res) => {
       [email]
     );
 
-    conslole.log(result.rows);
+    console.log(result.rows);
 
     if (result.rows.length === 0) {
       return res.status(404).json({
