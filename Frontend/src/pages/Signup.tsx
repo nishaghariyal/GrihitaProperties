@@ -51,11 +51,11 @@ function Signup() {
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
 
     
-    console.log("Password =", form.password);
-    console.log("Length =", form.password.length);
-    console.log(JSON.stringify(form.password));
+    console.log("Password =", password);
+    console.log("Length =", password.length);
+    console.log(JSON.stringify(password));
 
-    if (!passwordRegex.test(form.password)) {
+    if (!passwordRegex.test(password)) {
       alert(
         "Password must contain:\n\n• Minimum 8 characters\n• One uppercase letter\n• One lowercase letter\n• One number\n• One special character"
       );
