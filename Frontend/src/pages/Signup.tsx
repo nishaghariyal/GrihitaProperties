@@ -50,6 +50,10 @@ function Signup() {
     const passwordRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
 
+    
+    console.log(form.password);
+    console.log(passwordRegex.test(form.password));
+
     if (!passwordRegex.test(form.password)) {
       alert(
         "Password must contain:\n\n• Minimum 8 characters\n• One uppercase letter\n• One lowercase letter\n• One number\n• One special character"
