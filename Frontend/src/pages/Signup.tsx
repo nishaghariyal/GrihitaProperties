@@ -8,7 +8,7 @@ function Signup() {
 
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const [password, setPassword] = useState("");
+  
 
   const [form, setForm] = useState({
     name: "",
@@ -51,11 +51,11 @@ function Signup() {
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
 
     
-    console.log("Password =", password);
-    console.log("Length =", password.length);
-    console.log(JSON.stringify(password));
+    console.log("Password =", form.password);
+    console.log("Length =", form.password.length);
+    console.log(JSON.stringify(form.password));
 
-    if (!passwordRegex.test(password)) {
+    if (!passwordRegex.test(form.password)) {
       alert(
         "Password must contain:\n\n• Minimum 8 characters\n• One uppercase letter\n• One lowercase letter\n• One number\n• One special character"
       );
@@ -177,8 +177,13 @@ function Signup() {
           <div className="relative">
             <input
               type={showPassword ? "text" : "password"}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={form.password}
+              onChange={(e) =>
+                setForm({
+                  ...form,
+                  password: e.target.value,
+                })
+              }
               placeholder="Password"
               className="w-full border border-gray-300 p-3 rounded-xl pr-12"
               required
