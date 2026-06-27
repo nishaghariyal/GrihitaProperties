@@ -141,7 +141,7 @@ return (
 <Navbar />
 
   <section
-  className="relative min-h-screen flex items-center bg-cover bg-center"
+  className="relative min-h-screen flex items-center bg-cover bg-position-[center_30%] md:bg-center"
   style={{
     backgroundImage: `url(${hero})`,
   }}
