@@ -51,8 +51,11 @@ function Signup() {
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
 
     
-    console.log(form.password);
-    console.log(passwordRegex.test(form.password));
+    console.log("Password =", form.password);
+    console.log("Length =", form.password.length);
+    console.log(JSON.stringify(form.password));
+
+    
 
     if (!passwordRegex.test(form.password)) {
       alert(
