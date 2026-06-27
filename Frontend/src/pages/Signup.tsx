@@ -55,8 +55,6 @@ function Signup() {
     console.log("Length =", form.password.length);
     console.log(JSON.stringify(form.password));
 
-    
-
     if (!passwordRegex.test(form.password)) {
       alert(
         "Password must contain:\n\n• Minimum 8 characters\n• One uppercase letter\n• One lowercase letter\n• One number\n• One special character"
