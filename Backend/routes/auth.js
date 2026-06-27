@@ -86,11 +86,15 @@ router.post("/login", async (req, res) => {
       email,
       password
     } = req.body;
+    console.log("Email:", email);
+    console.log("Password:", password);
 
     const result = await pool.query(
       "SELECT * FROM users WHERE email=$1",
       [email]
     );
+
+    conslole.log(result.rows);
 
     if (result.rows.length === 0) {
       return res.status(404).json({
