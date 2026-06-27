@@ -141,12 +141,21 @@ return (
 <Navbar />
 
   <section
-  className="relative min-h-screen flex items-center bg-cover bg-position-[center_30%] md:bg-center"
+  className="
+  relative
+  min-h-svh
+  md:min-h-screen
+  flex
+  items-center
+  bg-cover
+  bg-center
+  bg-no-repeat
+  "
   style={{
     backgroundImage: `url(${hero})`,
   }}
 >
-  <div className="absolute inset-0 bg-linear-to-r from-black/75 via-black/55 to-black/30"></div>
+  <div className="absolute inset-0 bg-black/45 md:bg-black/35"></div>
 
   <div className="relative z-10 w-full py-20 md:py-28">
     <div className="max-w-7xl mx-auto px-6">
