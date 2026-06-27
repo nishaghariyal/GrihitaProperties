@@ -24,6 +24,8 @@ const [wishlist, setWishlist] = useState<number[]>(
   )
 );
 
+const [debouncedSearch, setDebouncedSearch] = useState(search);
+
 const propertySectionRef =
 useRef<HTMLDivElement>(null);
 
@@ -43,6 +45,18 @@ const res = await axios.get(
 }
 
 };
+
+useEffect(() => {
+  const timer = setTimeout(() => {
+    setDebouncedSearch(search);
+  }, 300);
+
+  return () => clearTimeout(timer);
+}, [search]);
+
+useEffect(() => {
+  fetchSuggestions(debouncedSearch);
+}, [debouncedSearch]);
 
 const fetchSuggestions = async (value: string) => {
 
@@ -250,7 +264,7 @@ return (
             value={search}
             onChange={(e) => {
               setSearch(e.target.value);
-              fetchSuggestions(e.target.value);
+              
             }}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
