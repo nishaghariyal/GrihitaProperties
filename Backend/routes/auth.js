@@ -99,12 +99,14 @@ router.post("/login", async (req, res) => {
     }
 
     const user = result.rows[0];
-
+    console.log("Entered Password:", password);
+    console.log("DB Hash:", user.password_hash);
     const validPassword =
       await bcrypt.compare(
         password,
         user.password_hash
       );
+    console.log("Password Match:",validPassword);
 
     if (!validPassword) {
       return res.status(401).json({
