@@ -264,7 +264,7 @@ return (
             value={search}
             onChange={(e) => {
               setSearch(e.target.value);
-              
+              setDebouncedSearch(e.target.value);
             }}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
