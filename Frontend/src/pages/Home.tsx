@@ -10,7 +10,7 @@ import {
 
 import {Link} from "react-router-dom";
 
-import hero from "../assets/hero.jpg";
+import hero from "../assets/hero.png";
 
 function Home() {
 const [properties, setProperties] = useState<any[]>([]);
