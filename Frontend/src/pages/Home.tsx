@@ -601,11 +601,13 @@ return (
     </div>
 
   </section>
+
+  
+<Footer />
 </>
 
 );
 }
 
-<Footer />
 
 export default Home;
