@@ -43,6 +43,8 @@ function CreateProperty() {
     listing_type: "Property",
     property_type: "Residential",
     location: "",
+    total_area: "",
+    price_per_sqft: "",
     bedrooms: "",
     bathrooms: "",
     image_url: "",
@@ -144,7 +146,7 @@ function CreateProperty() {
     }
   };
 
-  
+  const totalCost = Number(form.total_area || 0) * Number(form.price_per_sqft || 0);
 
   return (
     <>
@@ -225,6 +227,44 @@ function CreateProperty() {
               onChange={handleChange}
               required
               className="w-full border p-3 rounded-lg"
+            />
+
+            <input
+              type="number"
+              placeholder="Total Area (Sq Ft)"
+              value={form.total_area}
+              onChange={(e) =>
+                setForm({
+                  ...form,
+                  total_area: e.target.value,
+                })
+              }
+              className="w-full border border-gray-300 p-3 rounded-xl"
+            />
+
+            <input
+              type="number"
+              placeholder="Price per Sq Ft"
+              value={form.price_per_sqft}
+              onChange={(e) =>
+                setForm({
+                  ...form,
+                  price_per_sqft: e.target.value,
+                })
+              }
+              className="w-full border border-gray-300 p-3 rounded-xl"
+            />
+
+            <input
+              type="text"
+              value={
+                totalCost > 0
+                  ? `₹ ${totalCost.toLocaleString("en-IN")}`
+                  : ""
+              }
+              placeholder="Total Cost"
+              readOnly
+              className="w-full border border-gray-300 p-3 rounded-xl bg-gray-100 font-semibold"
             />
 
             <div className="grid grid-cols-2 gap-4">
