@@ -3,6 +3,7 @@ import { useNavigate, useLocation} from "react-router-dom";
 import API_URL from "../services/api";
 import { useAuth } from "../context/AuthContext";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
@@ -157,12 +158,12 @@ function Login() {
             Don't have an account?
           </p>
 
-          <a
-            href="/signup"
+          <Link
+            to="/signup"
             className="text-blue-600 font-semibold hover:underline"
           >
             Create Account
-          </a>
+          </Link>
 
         </div>
 
