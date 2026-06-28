@@ -20,9 +20,6 @@ function Footer() {
                 Grihita
             </h2>
 
-            <p className="tracking-[5px] text-xs text-amber-400">
-                PROPERTIES
-            </p>
           </div>
 
           </div>
