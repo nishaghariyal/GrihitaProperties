@@ -11,6 +11,7 @@ import {
 import {Link} from "react-router-dom";
 
 import hero from "../assets/hero.png";
+import Footer from "../components/Footer";
 
 function Home() {
 const [properties, setProperties] = useState<any[]>([]);
@@ -604,5 +605,7 @@ return (
 
 );
 }
+
+<Footer />
 
 export default Home;
