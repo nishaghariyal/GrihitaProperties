@@ -29,9 +29,9 @@ function Navbar() {
         >
           <div className="flex items-center gap-3">
 
-            <div className="w-11 h-11 rounded-full bg-linear-to-br from-white to-blue-50 border border-blue-100 flex items-center justify-center shadow-md">
+            <div className="w-11 h-11 rounded-full bg-white border border-blue-100 flex items-center justify-center shadow-md">
 
-              <MdApartment className="text-blue-700 text-xl" />
+              <MdApartment className="text-blue-600 text-xl" />
 
             </div>
 
