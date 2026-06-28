@@ -286,7 +286,7 @@ function CreateProperty() {
               className="w-full border border-gray-300 p-3 rounded-xl bg-gray-100 font-semibold"
               required
             />
-            {(form.property_type === "Residental" || form.property_type === "Farmhouse") &&(
+            {(form.property_type === "Residential" || form.property_type === "Farmhouse") &&(
               <div className="grid grid-cols-2 gap-4">
 
                 <input
@@ -296,7 +296,7 @@ function CreateProperty() {
                   value={form.bedrooms}
                   onChange={handleChange}
                   required={
-                    form.property_type === "Residental" ||
+                    form.property_type === "Residential" ||
                     form.property_type === "Farmhouse"
                   }
                   className="border p-3 rounded-lg"
@@ -309,7 +309,7 @@ function CreateProperty() {
                   value={form.bathrooms}
                   onChange={handleChange}
                   required={
-                    form.property_type === "Residental" ||
+                    form.property_type === "Residential" ||
                     form.property_type === "Farmhouse"
                   }
                   className="border p-3 rounded-lg"
