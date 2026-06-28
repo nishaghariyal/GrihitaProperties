@@ -136,9 +136,25 @@ function Footer() {
 
       </div>
 
-      <div className="border-t border-gray-700 mt-12 pt-6 text-center text-gray-400">
+      <div className="border-t border-gray-700 mt-10 pt-6 text-center space-y-2">
 
-        © 2026 Grihita Properties. Crafted with ❤️ in India.
+        <p className="text-gray-400 text-sm">
+            © 2026 Grihita Properties. All Rights Reserved.
+        </p>
+
+        <p className="text-sm text-gray-500">
+            Designed & Developed by{" "}
+            <span className="font-semibold text-white">
+            Nisha Ghariyal
+            </span>
+            {" • "}
+            <a
+            href="mailto:nishaghariyal@gmail.com"
+            className="text-amber-400 hover:text-amber-300 hover:underline transition-colors duration-300"
+            >
+            nishaghariyal@gmail.com
+            </a>
+        </p>
 
       </div>
 
