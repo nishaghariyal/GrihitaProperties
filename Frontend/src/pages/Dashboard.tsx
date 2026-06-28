@@ -4,6 +4,7 @@ import { useAuth } from "../context/AuthContext";
 import API_URL from "../services/api";
 import {useNavigate} from "react-router-dom";
 import {Navigate} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 import {
@@ -319,12 +320,12 @@ function Dashboard() {
                 My Properties
               </h2>
 
-              <a
-                href="/create-property"
+              <Link
+                to="/create-property"
                 className="bg-blue-600 text-white px-5 py-2 rounded-lg"
               >
                 Add Property
-              </a>
+              </Link>
 
             </div>
 
