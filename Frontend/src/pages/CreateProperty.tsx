@@ -59,10 +59,24 @@ function CreateProperty() {
       HTMLSelectElement
     >
   ) => {
+
+    if (e.target.name === "property_type") {
+
+      setForm({
+        ...form,
+        property_type: e.target.value,
+        bedrooms: "",
+        bathrooms: "",
+      });
+
+      return;
+    }
+
     setForm({
       ...form,
       [e.target.name]: e.target.value,
     });
+
   };
 
   const handleSubmit = async (
@@ -169,6 +183,30 @@ function CreateProperty() {
             className="space-y-5"
           >
 
+            <select
+              name="property_type"
+              value={form.property_type}
+              onChange={handleChange}
+              className="w-full border p-3 rounded-lg"
+              required
+            >
+              <option value="Residential">
+                Residential
+              </option>
+
+              <option value="Commercial">
+                Commercial
+              </option>
+
+              <option value="Land">
+                Land
+              </option>
+
+              <option value="Farmhouse">
+                Farmhouse
+              </option>
+            </select>
+
             <input
               name="title"
               placeholder="Property Title"
@@ -197,28 +235,7 @@ function CreateProperty() {
               className="w-full border p-3 rounded-lg"
             />
 
-            <select
-              name="property_type"
-              value={form.property_type}
-              onChange={handleChange}
-              className="w-full border p-3 rounded-lg"
-            >
-              <option value="Residential">
-                Residential
-              </option>
-
-              <option value="Commercial">
-                Commercial
-              </option>
-
-              <option value="Land">
-                Land
-              </option>
-
-              <option value="Farmhouse">
-                Farmhouse
-              </option>
-            </select>
+            
 
             <input
               name="location"
@@ -240,6 +257,7 @@ function CreateProperty() {
                 })
               }
               className="w-full border border-gray-300 p-3 rounded-xl"
+              required
             />
 
             <input
@@ -253,6 +271,7 @@ function CreateProperty() {
                 })
               }
               className="w-full border border-gray-300 p-3 rounded-xl"
+              required
             />
 
             <input
@@ -265,31 +284,39 @@ function CreateProperty() {
               placeholder="Total Cost"
               readOnly
               className="w-full border border-gray-300 p-3 rounded-xl bg-gray-100 font-semibold"
+              required
             />
+            {(form.property_type === "Residental" || form.property_type === "Farmhouse") &&(
+              <div className="grid grid-cols-2 gap-4">
 
-            <div className="grid grid-cols-2 gap-4">
+                <input
+                  type="number"
+                  name="bedrooms"
+                  placeholder="Bedrooms"
+                  value={form.bedrooms}
+                  onChange={handleChange}
+                  required={
+                    form.property_type === "Residental" ||
+                    form.property_type === "Farmhouse"
+                  }
+                  className="border p-3 rounded-lg"
+                />
 
-              <input
-                type="number"
-                name="bedrooms"
-                placeholder="Bedrooms"
-                value={form.bedrooms}
-                onChange={handleChange}
-                required
-                className="border p-3 rounded-lg"
-              />
+                <input
+                  type="number"
+                  name="bathrooms"
+                  placeholder="Bathrooms"
+                  value={form.bathrooms}
+                  onChange={handleChange}
+                  required={
+                    form.property_type === "Residental" ||
+                    form.property_type === "Farmhouse"
+                  }
+                  className="border p-3 rounded-lg"
+                />
 
-              <input
-                type="number"
-                name="bathrooms"
-                placeholder="Bathrooms"
-                value={form.bathrooms}
-                onChange={handleChange}
-                required
-                className="border p-3 rounded-lg"
-              />
-
-            </div>
+              </div>
+            )}
 
             {/* Image Upload */}
 
