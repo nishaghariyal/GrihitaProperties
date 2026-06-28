@@ -52,23 +52,6 @@ function Footer() {
 
           <ul className="space-y-3 text-gray-300">
 
-            <li>
-                <Link to="/" className="hover:text-amber-400 transition">
-                Home
-                </Link>
-            </li>
-
-            <li>
-                <Link to="/" className="hover:text-amber-400 transition">
-                Properties
-                </Link>
-            </li>
-
-            <li>
-                <Link to="/" className="hover:text-amber-400 transition">
-                Cities
-                </Link>
-            </li>
 
             <li>
                 <Link to="/login" className="hover:text-amber-400 transition">
