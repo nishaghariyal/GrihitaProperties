@@ -187,7 +187,7 @@ function CreateProperty() {
               name="property_type"
               value={form.property_type}
               onChange={handleChange}
-              className="w-full border p-3 rounded-lg"
+              className="w-full border border-gray-400 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             >
               <option value="Residential">
@@ -213,7 +213,7 @@ function CreateProperty() {
               value={form.title}
               onChange={handleChange}
               required
-              className="w-full border p-3 rounded-lg"
+              className="w-full border border-gray-400 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
 
             <textarea
@@ -222,7 +222,7 @@ function CreateProperty() {
               value={form.description}
               onChange={handleChange}
               required
-              className="w-full border p-3 rounded-lg h-32"
+              className="w-full border border-gray-400 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
 
             <input
@@ -232,7 +232,7 @@ function CreateProperty() {
               value={form.price}
               onChange={handleChange}
               required
-              className="w-full border p-3 rounded-lg"
+              className="w-full border border-gray-400 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
 
             
@@ -243,7 +243,7 @@ function CreateProperty() {
               value={form.location}
               onChange={handleChange}
               required
-              className="w-full border p-3 rounded-lg"
+              className="w-full border border-gray-400 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
 
             <input
@@ -256,7 +256,7 @@ function CreateProperty() {
                   total_area: e.target.value,
                 })
               }
-              className="w-full border border-gray-300 p-3 rounded-xl"
+              className="w-full border border-gray-400 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
 
@@ -270,7 +270,7 @@ function CreateProperty() {
                   price_per_sqft: e.target.value,
                 })
               }
-              className="w-full border border-gray-300 p-3 rounded-xl"
+              className="w-full border border-gray-400 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
 
@@ -283,7 +283,7 @@ function CreateProperty() {
               }
               placeholder="Total Cost"
               readOnly
-              className="w-full border border-gray-300 p-3 rounded-xl bg-gray-100 font-semibold"
+              className="w-full border border-gray-400 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
             {(form.property_type === "Residential" || form.property_type === "Farmhouse") &&(
@@ -299,7 +299,7 @@ function CreateProperty() {
                     form.property_type === "Residential" ||
                     form.property_type === "Farmhouse"
                   }
-                  className="border p-3 rounded-lg"
+                  className="w-full border border-gray-400 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
 
                 <input
@@ -312,7 +312,7 @@ function CreateProperty() {
                     form.property_type === "Residential" ||
                     form.property_type === "Farmhouse"
                   }
-                  className="border p-3 rounded-lg"
+                  className="w-full border border-gray-400 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
 
               </div>
@@ -322,7 +322,7 @@ function CreateProperty() {
 
             <div
               {...getRootProps()}
-              className="border-2 border-dashed p-6 rounded-lg cursor-pointer text-center"
+              className="border-2 border-dashed border-gray-400 rounded-lg p-6 cursor-pointer text-center hover:border-blue-500 hover:bg-blue-50 transition-all duration-300"
             >
               <input {...getInputProps()} />
 
@@ -354,7 +354,7 @@ function CreateProperty() {
 
             <div
               {...getVideoRootProps()}
-              className="border-2 border-dashed p-6 rounded-lg cursor-pointer text-center mt-4"
+              className="border-2 border-dashed border-gray-400 rounded-lg p-6 cursor-pointer text-center mt-4 hover:border-blue-500 hover:bg-blue-50 transition-all duration-300"
             >
               <input {...getVideoInputProps()} />
 
